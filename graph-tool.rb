@@ -11,7 +11,7 @@ class GraphTool < Formula
   end
 
   option "without-cairo", "Build without cairo support for plotting"
-  option "with-gtk+3", "Build with gtk+3 support for interactive plotting"
+  option "without-gtk+3", "Build without gtk+3 support for interactive plotting"
 
   cxx11 = MacOS.version < :mavericks ? ["c++11"] : []
   with_pythons = build.with?("python3") ? ["with-python3"] : []
@@ -21,7 +21,7 @@ class GraphTool < Formula
   depends_on "cairomm" => cxx11 if build.with? "cairo"
   depends_on "cgal" => cxx11
   depends_on "google-sparsehash" => cxx11 + [:recommended]
-  depends_on "gtk+3" => :optional
+  depends_on "gtk+3" => :recommended
   depends_on :python => :recommended
   depends_on :python3 => :optional
   depends_on "boost-python" => cxx11 + with_pythons
