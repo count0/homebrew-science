@@ -45,6 +45,15 @@ class GraphTool < Formula
     depends_on "numpy" => :python3
     depends_on "scipy" => :python3
   end
+  
+  stable do
+    # fix import if gtk+3 or cairo isn't present
+    # https://github.com/Homebrew/homebrew-science/pull/2108#issuecomment-94138693
+    patch do
+      url "https://github.com/count0/graph-tool/commit/c8f99e7c.diff"
+      sha256 "ecebc6b311ea438506e32a4ea0f74964e661118a562b7bc71563dfb9c3cf4407"
+    end
+  end
 
   def install
     ENV.cxx11
