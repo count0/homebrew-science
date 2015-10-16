@@ -50,6 +50,10 @@ class GraphTool < Formula
     depends_on "pygobject3" => with_pythons
   end
 
+  fails_with :clang => '3.5' do
+    cause "seems to have insuficient C++14 support"
+  end
+
   def install
     ENV.cxx11
 
