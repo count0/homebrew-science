@@ -50,18 +50,18 @@ class GraphTool < Formula
     depends_on "pygobject3" => with_pythons
   end
 
-# We need a compiler with C++14 support.
-fails_with :llvm
+  # We need a compiler with C++14 support.
+  fails_with :llvm
 
-fails_with :clang do
-  build 3.5.2  # the highest build version for which compilation will fail
-  cause "graph-tool must be compiled in c++14 mode"
-end
+  fails_with :clang do
+    build 3.5.2  # the highest build version for which compilation will fail
+    cause "graph-tool must be compiled in c++14 mode"
+  end
 
-fails_with :gcc
-fails_with :gcc => "4.8" do
-  cause "graph-tool must be compiled in c++14 mode"
-end
+  fails_with :gcc
+  fails_with :gcc => "4.8" do
+    cause "graph-tool must be compiled in c++14 mode"
+  end
 
   def install
     ENV.cxx11
