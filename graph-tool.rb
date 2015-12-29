@@ -54,7 +54,7 @@ class GraphTool < Formula
   fails_with :llvm
 
   fails_with :clang do
-    build 352  # the highest build version for which compilation will fail
+    build 600  # the highest build version for which compilation will fail
     cause "graph-tool must be compiled in c++14 mode"
   end
 
