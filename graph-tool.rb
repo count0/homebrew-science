@@ -77,6 +77,7 @@ class GraphTool < Formula
 
     config_args << "--disable-cairo" if build.without? "cairo"
     config_args << "--disable-sparsehash" if build.without? "google-sparsehash"
+    config_args << "CXXFLAGS=-fext-numeric-literals" # fix issue with boost and C++11/C++14
 
     Language::Python.each_python(build) do |python, version|
       config_args_x = ["PYTHON=#{python}"]
