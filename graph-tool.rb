@@ -73,7 +73,7 @@ class GraphTool < Formula
       --disable-dependency-tracking
       --prefix=#{prefix}
     ]
-    
+
     # fix issue with boost + gcc with C++11/C++14
     ENV.append "CXXFLAGS", "-fext-numeric-literals" unless ENV.compiler == :clang
     config_args << "--disable-cairo" if build.without? "cairo"
