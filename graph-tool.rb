@@ -71,7 +71,6 @@ class GraphTool < Formula
     config_args = %W[
       --disable-debug
       --disable-dependency-tracking
-      --disable-optimization
       --prefix=#{prefix}
     ]
     
