@@ -2,7 +2,6 @@ class GraphTool < Formula
   homepage "http://graph-tool.skewed.de/"
   url "http://downloads.skewed.de/graph-tool/graph-tool-2.13.tar.bz2"
   sha256 "8a4ab48518cbdec41b2e2a8151eb563fe837361d84d77896fa7b24dc64c81e8b"
-  revision 1
 
   head do
     url "https://git.skewed.de/count0/graph-tool.git"
@@ -10,13 +9,13 @@ class GraphTool < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
-  
+
   bottle do
     sha256 "1403a9699ab147da134b39d4cc3b64cd1a49be1d7d9b5941a842f87f5b9132b6" => :el_capitan
     sha256 "c0259303a55befb147a40d60e58e283d2b9774d5a52b9d7f13b8eacc8e0d063f" => :yosemite
     sha256 "7f2ecc68e838a493bcfe533b36c94d1e2b7dc90bd03ea0e1453f94bc1d80ef11" => :mavericks
   end
-  
+
   option "without-cairo", "Build without cairo support for plotting"
   option "without-gtk+3", "Build without gtk+3 support for interactive plotting"
   option "without-matplotlib", "Use a matplotlib you've installed yourself instead of a Homebrew-packaged matplotlib"
