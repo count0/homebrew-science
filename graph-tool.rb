@@ -1,39 +1,14 @@
 class GraphTool < Formula
   homepage "http://graph-tool.skewed.de/"
-  url "http://downloads.skewed.de/graph-tool/graph-tool-2.12.tar.bz2"
-  sha256 "ac5fdd65cdedb568302d302b453fe142b875f23e3500fe814a73c88db49993a9"
+  url "http://downloads.skewed.de/graph-tool/graph-tool-2.13.tar.bz2"
+  sha256 "8a4ab48518cbdec41b2e2a8151eb563fe837361d84d77896fa7b24dc64c81e8b"
   revision 1
-
-  stable do
-    # Commits to subgraph_isomorphism which are required for the last patch
-    patch do
-      url "https://git.skewed.de/count0/graph-tool/commit/ca2b8d110353e7ba4e105ca7afff4229f7dd61a1.diff"
-      sha256 "6c5a27fe386f0424cad553bc2b6dcbe1ccb2d4e9f8c759702799ab901eb8dc36"
-    end
-
-    patch do
-      url "https://git.skewed.de/count0/graph-tool/commit/24a16870bb9b4be1408416b1fa04b9ed013a4871.diff"
-      sha256 "456247297df4a7db7ffa696bbd6cee3ab3a6ffa7e20dbd1a2058336efa33a782"
-    end
-
-    # Fixes build with boost 1.60
-    patch do
-      url "https://git.skewed.de/count0/graph-tool/commit/248b086187808d0bbda27bde8a1efe12a15bddaa.diff"
-      sha256 "cd706ba200441243f8ae6301403dbdf23d3b1e29ac327288b47d65001952250e"
-    end
-  end
 
   head do
     url "https://git.skewed.de/count0/graph-tool.git"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-  end
-
-  bottle do
-    sha256 "1403a9699ab147da134b39d4cc3b64cd1a49be1d7d9b5941a842f87f5b9132b6" => :el_capitan
-    sha256 "c0259303a55befb147a40d60e58e283d2b9774d5a52b9d7f13b8eacc8e0d063f" => :yosemite
-    sha256 "7f2ecc68e838a493bcfe533b36c94d1e2b7dc90bd03ea0e1453f94bc1d80ef11" => :mavericks
   end
 
   option "without-cairo", "Build without cairo support for plotting"
@@ -79,7 +54,7 @@ class GraphTool < Formula
   end
 
   fails_with :gcc
-  fails_with :gcc => "4.8" do
+  fails_with :gcc => "4.9" do
     cause "graph-tool must be compiled in c++14 mode"
   end
 
