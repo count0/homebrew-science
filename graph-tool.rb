@@ -54,13 +54,26 @@ class GraphTool < Formula
   fails_with :llvm
 
   fails_with :clang do
-    build 601  # the highest build version for which compilation will fail
-    cause "graph-tool must be compiled in c++14 mode"
+    build 600
+    build 602
+    build 700
+    cause "We need (vanilla) clang version 3.7.1 or above, to avoid compiler bugs with undefined symbols"
   end
 
-  fails_with :gcc
+  fails_with :clang => "3.6" do
+    cause "We need clang version 3.7.1 or above, to avoid compiler bugs with undefined symbols"
+  end
+  
+  fails_with :clang => "3.7" do
+    version 3.7.0
+    cause "We need clang version 3.7.1 or above, to avoid compiler bugs with undefined symbols"
+  end
+
+  fails_with :gcc => "4.8" do
+    cause "We need GCC 5.0 or above for sufficient c++14 support"
+  end
   fails_with :gcc => "4.9" do
-    cause "graph-tool must be compiled in c++14 mode"
+    cause "We need GCC 5.0 or above for sufficient c++14 support"
   end
 
   def install
