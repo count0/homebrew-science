@@ -65,7 +65,7 @@ class GraphTool < Formula
   end
   
   fails_with :clang => "3.7" do
-    version 3.7.0
+    version "3.7.0"
     cause "We need clang version 3.7.1 or above, to avoid compiler bugs with undefined symbols"
   end
 
