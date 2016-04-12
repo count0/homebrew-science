@@ -54,7 +54,9 @@ class GraphTool < Formula
   # We need a compiler with C++14 support.
   fails_with :llvm
 
-  fails_with :clang
+  fails_with :clang do
+    build 700.1.81
+  end
 
   fails_with :gcc => "4.8" do
     cause "We need GCC 5.0 or above for sufficient c++14 support"
