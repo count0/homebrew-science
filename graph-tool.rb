@@ -1,7 +1,7 @@
 class GraphTool < Formula
   homepage "http://graph-tool.skewed.de/"
-  url "http://downloads.skewed.de/graph-tool/graph-tool-2.13.tar.bz2"
-  sha256 "8a4ab48518cbdec41b2e2a8151eb563fe837361d84d77896fa7b24dc64c81e8b"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.14.tar.bz2"
+  sha256 "2a5a1603e40c42b531de639e14968273c56e620bd1002e764fbe8c7b3361d830"
 
   head do
     url "https://git.skewed.de/count0/graph-tool.git"
