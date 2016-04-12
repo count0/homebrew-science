@@ -22,6 +22,7 @@ class GraphTool < Formula
   option "without-numpy", "Use a numpy you've installed yourself instead of a Homebrew-packaged numpy"
   option "without-python", "Build without python2 support"
   option "without-scipy", "Use a scipy you've installed yourself instead of a Homebrew-packaged scipy"
+  option "with-openmp", "Enable parallel algorithms with OpenMP (requires GCC or clang >= 3.8)"
 
   cxx11 = MacOS.version < :mavericks ? ["c++11"] : []
   with_pythons = build.with?("python3") ? ["with-python3"] : []
@@ -75,6 +76,7 @@ class GraphTool < Formula
     ENV.append "CXXFLAGS", "-fext-numeric-literals" unless ENV.compiler == :clang
     config_args << "--disable-cairo" if build.without? "cairo"
     config_args << "--disable-sparsehash" if build.without? "google-sparsehash"
+    config_args << "--enable-openmp" if build.with? "openmp"
 
     Language::Python.each_python(build) do |python, version|
       config_args_x = ["PYTHON=#{python}"]
