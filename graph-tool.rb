@@ -66,6 +66,10 @@ class GraphTool < Formula
     cause "We need GCC 5.0 or above for sufficient c++14 support"
   end
 
+  if MacOS.version == :mavericks && (Tab.for_name("boost").stdlib == "libcxx" || Tab.for_name("boost-python").stdlib == "libcxx")
+    odie "boost and boost-python must be built against libstdc++ on Mavericks. One way to achieve this, is to use GCC to compile both libraries."
+  end
+
   def install
     system "./autogen.sh" if build.head?
 
