@@ -56,7 +56,7 @@ class GraphTool < Formula
 
   fails_with :clang do
     cause "Older versions of clang have buggy c++14 support."
-    build 700
+    build 702
   end
 
   fails_with :gcc => "4.8" do
@@ -66,11 +66,12 @@ class GraphTool < Formula
     cause "We need GCC 5.0 or above for sufficient c++14 support"
   end
 
-  if MacOS.version == :mavericks && (Tab.for_name("boost").stdlib == "libcxx" || Tab.for_name("boost-python").stdlib == "libcxx")
-    odie "boost and boost-python must be built against libstdc++ on Mavericks. One way to achieve this, is to use GCC to compile both libraries."
-  end
-
   def install
+
+    if MacOS.version == :mavericks && (Tab.for_name("boost").stdlib == "libcxx" || Tab.for_name("boost-python").stdlib == "libcxx")
+      odie "boost and boost-python must be built against libstdc++ on Mavericks. One way to achieve this, is to use GCC to compile both libraries."
+    end
+
     system "./autogen.sh" if build.head?
 
     config_args = %W[
