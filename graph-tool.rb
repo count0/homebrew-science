@@ -59,7 +59,7 @@ class GraphTool < Formula
 
   fails_with :clang do
     cause "Older versions of clang have buggy c++14 support."
-    build 702
+    build 699
   end
 
   fails_with :gcc => "4.8" do
