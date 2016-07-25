@@ -80,7 +80,7 @@ class GraphTool < Formula
     if MacOS.version == :mavericks && (Tab.for_name("boost").stdlib == "libcxx" || Tab.for_name("boost-python").stdlib == "libcxx")
       odie "boost and boost-python must be built against libstdc++ on Mavericks. One way to achieve this, is to use GCC to compile both libraries."
     end
-  
+
     system "./autogen.sh" if build.head?
 
     config_args = %W[
