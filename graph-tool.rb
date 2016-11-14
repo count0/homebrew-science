@@ -1,7 +1,6 @@
 class GraphTool < Formula
   desc "efficient network analysis"
   homepage "http://graph-tool.skewed.de/"
-  revision 4
 
   stable do
     url "https://downloads.skewed.de/graph-tool/graph-tool-2.19.tar.bz2"
