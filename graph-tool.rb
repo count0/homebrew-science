@@ -3,8 +3,8 @@ class GraphTool < Formula
   homepage "http://graph-tool.skewed.de/"
 
   stable do
-    url "https://downloads.skewed.de/graph-tool/graph-tool-2.19.tar.bz2"
-    sha256 "eba1090f94b0434890beedaf0c100dd0fc77e41ebfe29b4725d76cadb82099af"
+    url "https://downloads.skewed.de/graph-tool/graph-tool-2.20.tar.bz2"
+    sha256 "fc9df701062c556b818824aa9578368ef0faec195696b008512ee948db3ae628"
   end
 
   bottle do
