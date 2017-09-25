@@ -1,8 +1,8 @@
 class GraphTool < Formula
   desc "efficient network analysis"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.22.tar.bz2"
-  sha256 "57121b562763c79c138b3a385b8cddb59e7dec375c61e00ca7e9e96fd1a5e080"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.23.tar.bz2"
+  sha256 "5278f7d7504c7d4de2b259a079f37c894d4ee11daa53ba6f5d646a13e4a4da34"
   revision 2
 
   bottle do
@@ -16,11 +16,6 @@ class GraphTool < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-  end
-
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/3b7bcf4f4a71d8f0b3062c08c378cc20089d6b4b/graph-tool/chrono-disambiguation.diff"
-    sha256 "1c1a8b8bcb3f67856d45f2707ac3924e68ecddffee909a88c8a74a547ffe43df"
   end
 
   option "without-cairo", "Build without cairo support for plotting"
