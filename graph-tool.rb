@@ -4,8 +4,6 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.26.tar.bz2"
   sha256 "df6273dc5ef327a0eaf1ef1c46751fce4c0b7573880944e544287b85a068f770"
 
-  bottle :disable, "needs to be rebuilt with latest boost"
-
   head do
     url "https://git.skewed.de/count0/graph-tool.git"
 
